@@ -1,0 +1,32 @@
+<section *ngIf="collection() as current" class="collection-detail">
+  <div class="hero" [style.background-image]="'url(' + current.heroImage + ')'">
+    <div class="hero-overlay">
+      <h1>{{ current.title }}</h1>
+      <p>{{ current.intro }}</p>
+      <a class="btn primary" routerLink="['/contact']">Request a Quote</a>
+    </div>
+  </div>
+
+  <section class="highlights">
+    <h2>Why customers love this collection</h2>
+    <ul>
+      <li *ngFor="let highlight of current.highlights">{{ highlight }}</li>
+    </ul>
+  </section>
+
+  <section class="featured-products">
+    <div class="section-heading">
+      <h2>Featured products</h2>
+      <a routerLink="['/collections']">Back to collections</a>
+    </div>
+    <div class="grid">
+      <a class="product-card" *ngFor="let product of current.featuredProducts" [routerLink]="['/product', product.slug]">
+        <img [src]="product.image" [alt]="product.title" loading="lazy" />
+        <div class="info">
+          <h3>{{ product.title }}</h3>
+          <p>From ${{ product.priceFrom }}</p>
+        </div>
+      </a>
+    </div>
+  </section>
+</section>

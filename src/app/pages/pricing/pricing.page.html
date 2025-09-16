@@ -1,0 +1,47 @@
+<section class="pricing-page">
+  <header>
+    <h1>Pricing</h1>
+    <p>Transparent pricing so you know exactly what to budget. Base product cost + engraving tier + any add-ons. Volume discounts apply automatically.</p>
+  </header>
+
+  <section class="base">
+    <h2>Engraving tiers</h2>
+    <div class="tiers">
+      <article *ngFor="let tier of engravingTiers()">
+        <h3>{{ tier.level }}</h3>
+        <p>{{ tier.description }}</p>
+        <span class="rate">+${{ tier.rate }} per piece</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="volume">
+    <h2>Volume discounts</h2>
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Benefit</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tier of volumeDiscounts()">
+          <td>{{ tier.min }}+</td>
+          <td>{{ tier.discount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="addons">
+    <h2>Add-ons</h2>
+    <ul>
+      <li *ngFor="let add of addOns()">
+        <span>{{ add.name }}</span>
+        <span>${{ add.price }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="cta">
+    <p>Need a detailed quote for your project? Share your artwork and quantity — we’ll estimate engraving time, finishing, and shipping.</p>
+    <a routerLink="/contact" class="btn primary">Request a Quote</a>
+  </footer>
+</section>

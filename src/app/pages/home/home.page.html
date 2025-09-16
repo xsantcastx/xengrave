@@ -1,0 +1,104 @@
+<section class="hero">
+  <div class="hero-content">
+    <p class="pretitle">Premium Laser Engraving</p>
+    <h1>Bring Your Ideas to Life</h1>
+    <p class="subtitle">Made-to-order engraving on metal, wood, acrylic, and more — proofs in 24h, ships within 72h.</p>
+    <div class="hero-actions">
+      <a class="btn primary" routerLink="/custom">Start a Custom Order</a>
+      <a class="btn ghost" routerLink="/collections">Browse Collections</a>
+    </div>
+    <ul class="badge-list">
+      <li *ngFor="let badge of badges()">{{ badge.label }}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="section-heading">
+    <h2>Shop by Collection</h2>
+    <a routerLink="/collections" aria-label="View all collections">View all</a>
+  </div>
+  <div class="grid">
+    <a class="card" *ngFor="let c of featured()" [routerLink]="['/collections', c.slug]">
+      <img [src]="c.image" [alt]="c.title" loading="lazy" />
+      <div class="card-title">{{ c.title }}</div>
+    </a>
+  </div>
+</section>
+
+<section class="bestsellers">
+  <div class="section-heading">
+    <h2>Bestsellers</h2>
+    <a routerLink="/pricing">Transparent pricing</a>
+  </div>
+  <div class="grid products">
+    <a class="product" *ngFor="let p of bestsellers()" [routerLink]="['/product', p.slug]">
+      <img [src]="p.image" [alt]="p.title" loading="lazy" />
+      <div class="info">
+        <h3>{{ p.title }}</h3>
+        <p class="price">From ${{ p.price }}</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="process">
+  <h2>How It Works</h2>
+  <ol class="steps">
+    <li>
+      <span class="step-number">1</span>
+      <h3>Choose</h3>
+      <p>Select a base product or start from a blank canvas.</p>
+    </li>
+    <li>
+      <span class="step-number">2</span>
+      <h3>Customize</h3>
+      <p>Upload artwork, add text, and position it exactly how you like.</p>
+    </li>
+    <li>
+      <span class="step-number">3</span>
+      <h3>Approve</h3>
+      <p>Receive a digital proof within 24 hours for sign-off.</p>
+    </li>
+    <li>
+      <span class="step-number">4</span>
+      <h3>Engrave &amp; Ship</h3>
+      <p>We engrave with industrial-grade lasers and ship within 48–72 hours.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="gallery-strip" aria-label="Recent engravings">
+  <h2>Gallery Sneak Peek</h2>
+  <div class="strip">
+    <img src="/img/gallery-1.jpg" alt="Engraved tumblers" loading="lazy" />
+    <img src="/img/gallery-2.jpg" alt="Laser etched skate deck" loading="lazy" />
+    <img src="/img/gallery-3.jpg" alt="Custom wallet card" loading="lazy" />
+    <img src="/img/gallery-4.jpg" alt="Wedding signage engraving" loading="lazy" />
+  </div>
+  <a routerLink="/gallery" class="link">See full gallery ?</a>
+</section>
+
+<section class="trust">
+  <div class="metrics">
+    <p class="stat">1,200+ custom pieces shipped</p>
+    <p class="stat">4.9? average rating</p>
+  </div>
+  <div class="logos" aria-label="Brands we have served">
+    <img *ngFor="let logo of logos()" [src]="'/img/logos/' + logo" alt="" loading="lazy" />
+  </div>
+  <div class="reviews">
+    <blockquote>
+      “Xengrave made our corporate gifting effortless. Proof approved in hours and the tumblers were flawless.”
+      <cite>— Melissa R., Operations Lead</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div>
+    <h2>Ready to engrave something unforgettable?</h2>
+    <p>Tell us about your project and we’ll send a detailed quote with timeline.</p>
+  </div>
+  <a class="btn primary" routerLink="/contact">Request a Quote</a>
+</section>

@@ -1,0 +1,13 @@
+<section class="gallery-page">
+  <header>
+    <h1>Gallery &amp; Inspiration</h1>
+    <p>Real pieces we have created for brands, weddings, events, and makers. Mix of stainless, powdercoat, wood, and acrylic projects.</p>
+  </header>
+
+  <div class="grid" role="list">
+    <figure class="piece" role="listitem" *ngFor="let piece of pieces()">
+      <img [src]="piece.image" [alt]="piece.title" loading="lazy" />
+      <figcaption>{{ piece.title }}</figcaption>
+    </figure>
+  </div>
+</section>

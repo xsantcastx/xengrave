@@ -1,0 +1,101 @@
+:host {
+  display: block;
+}
+
+.pricing-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  display: grid;
+  gap: 3rem;
+}
+
+header {
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+  color: #dedbd4;
+}
+
+.base .tiers {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.base article {
+  background: #101010;
+  border-radius: 16px;
+  border: 1px solid #1b1b1b;
+  padding: 1.8rem 1.6rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.rate {
+  color: #e7c37b;
+  font-weight: 600;
+}
+
+.volume table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #101010;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #1b1b1b;
+}
+
+.volume th,
+.volume td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+
+.volume thead {
+  background: rgba(231, 195, 123, 0.1);
+  color: #f4f2ec;
+}
+
+.volume tbody tr:nth-child(even) {
+  background: rgba(18, 18, 18, 0.7);
+}
+
+.addons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.addons li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #101010;
+  border: 1px solid #1b1b1b;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+
+.cta {
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(37, 35, 29, 0.92));
+  border: 1px solid rgba(231, 195, 123, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  text-align: center;
+  color: #f4f2ec;
+}
+
+.btn.primary {
+  justify-self: center;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: #e7c37b;
+  color: #151515;
+  font-weight: 600;
+  text-decoration: none;
+}

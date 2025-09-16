@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  background: #070707;
+  color: #e9e6df;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(7, 7, 7, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e7c37b;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #d0cec8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(231, 195, 123, 0.12);
+  color: #f2f0ea;
+}
+
+.btn.primary {
+  background: #e7c37b;
+  color: #191919;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn.primary.small {
+  margin-left: auto;
+}
+
+.site-main {
+  min-height: calc(100dvh - 260px);
+}
+
+.site-footer {
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 3rem 1.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.site-footer .wrap {
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.brand-block {
+  max-width: 340px;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-links h3 {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  color: #f4f2ec;
+}
+
+.footer-links a {
+  display: block;
+  color: #bdb9b3;
+  text-decoration: none;
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a:hover {
+  color: #e7c37b;
+}
+
+.meta {
+  text-align: center;
+  color: #8f8c85;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  .btn.primary.small {
+    order: 3;
+    margin-left: 0;
+  }
+
+  nav {
+    flex: 1 1 100%;
+  }
+
+  .site-footer .wrap {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}

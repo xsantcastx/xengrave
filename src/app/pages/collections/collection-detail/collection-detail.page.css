@@ -1,0 +1,124 @@
+:host {
+  display: block;
+}
+
+.collection-detail {
+  display: grid;
+  gap: 3rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.6));
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  color: #f4f2ec;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-overlay .btn {
+  justify-self: center;
+}
+
+.highlights {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.highlights ul {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.highlights li {
+  background: #111111;
+  border-radius: 12px;
+  border: 1px solid #1f1f1f;
+  padding: 1.2rem 1.4rem;
+}
+
+.featured-products {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-heading a {
+  color: #e7c37b;
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.product-card {
+  background: #101010;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #1b1b1b;
+  text-decoration: none;
+  color: #dedbd4;
+  transition: transform 150ms ease, border-color 150ms ease;
+  display: grid;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .info {
+  padding: 1.2rem 1.4rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(231, 195, 123, 0.4);
+}
+
+.btn.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: #e7c37b;
+  color: #151515;
+  font-weight: 600;
+  text-decoration: none;
+}

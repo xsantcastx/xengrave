@@ -1,0 +1,67 @@
+<section class="product" *ngIf="product() as current">
+  <div class="media">
+    <div class="primary">
+      <img [src]="current.images[0]" [alt]="current.title" />
+    </div>
+    <div class="thumbs" *ngIf="current.images.length > 1">
+      <img *ngFor="let img of current.images" [src]="img" [alt]="current.title + ' detail'" loading="lazy" />
+    </div>
+  </div>
+
+  <div class="details">
+    <header>
+      <p class="eyebrow">Collection: {{ current.slug | titlecase }}</p>
+      <h1>{{ current.title }}</h1>
+      <p class="subtitle" *ngIf="current.subtitle">{{ current.subtitle }}</p>
+    </header>
+
+    <form [formGroup]="form" class="options" aria-describedby="price-summary">
+      <ng-container *ngFor="let option of current.options">
+        <label *ngIf="option.type === 'select'">
+          {{ option.label }}
+          <select [formControlName]="option.key">
+            <option *ngFor="let value of option.values" [value]="value">{{ value }}</option>
+          </select>
+        </label>
+
+        <fieldset *ngIf="option.type === 'radio'">
+          <legend>{{ option.label }}</legend>
+          <label *ngFor="let value of option.values">
+            <input type="radio" [value]="value" [formControlName]="option.key" />
+            {{ value | titlecase }}
+          </label>
+        </fieldset>
+      </ng-container>
+
+      <label>
+        Quantity
+        <input type="number" min="1" formControlName="quantity" />
+      </label>
+
+      <label>
+        Optional text
+        <input type="text" formControlName="text" placeholder="e.g., Name or date" />
+      </label>
+    </form>
+
+    <section id="price-summary" class="pricing">
+      <div>
+        <span>Unit total</span>
+        <strong>${{ total().unit | number:'1.2-2' }}</strong>
+      </div>
+      <div>
+        <span>Order subtotal</span>
+        <strong>${{ total().subtotal | number:'1.2-2' }}</strong>
+      </div>
+    </section>
+
+    <div class="cta">
+      <button type="button" class="btn primary">Add to Quote</button>
+      <a routerLink="/custom" class="link">Open advanced customizer ?</a>
+    </div>
+
+    <aside class="meta">
+      <p>Proof in 24 hours • Ships in 48–72 hours • Min. order 1</p>
+    </aside>
+  </div>
+</section>

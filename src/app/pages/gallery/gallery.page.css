@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+.gallery-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+header {
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+  color: #dedbd4;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.piece {
+  margin: 0;
+  background: #101010;
+  border-radius: 14px;
+  border: 1px solid #1b1b1b;
+  overflow: hidden;
+  display: grid;
+}
+
+.piece img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  color: #bdbab4;
+}

@@ -1,0 +1,44 @@
+<section class="contact-page">
+  <header>
+    <h1>Request a Quote</h1>
+    <p>Share your project details and artwork. We will respond within one business day with pricing, proof timeline, and shipping estimates.</p>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="grid">
+      <label>
+        Name
+        <input formControlName="name" required />
+        <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Name is required.</span>
+      </label>
+
+      <label>
+        Email
+        <input type="email" formControlName="email" required />
+        <span *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Enter a valid email.</span>
+      </label>
+
+      <label>
+        Phone
+        <input formControlName="phone" placeholder="Optional" />
+      </label>
+
+      <label>
+        Quantity
+        <input type="number" min="1" formControlName="quantity" required />
+      </label>
+
+      <label class="textarea">
+        Notes
+        <textarea rows="4" formControlName="notes" placeholder="Tell us about your project, materials, timeline..."></textarea>
+      </label>
+
+      <label>
+        Artwork
+        <input type="file" accept="image/*,.svg,.pdf" (change)="onFileChange($event)" />
+      </label>
+    </div>
+
+    <button class="btn primary" type="submit">Submit</button>
+  </form>
+</section>

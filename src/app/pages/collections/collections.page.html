@@ -1,0 +1,17 @@
+<section class="collections">
+  <header>
+    <h1>Collections</h1>
+    <p>Curated engravable products organized by use-case. Each collection includes recommended materials, finishes, and pricing tiers.</p>
+  </header>
+
+  <div class="grid">
+    <a class="collection-card" *ngFor="let collection of collections()" [routerLink]="['/collections', collection.slug]">
+      <img [src]="collection.image" [alt]="collection.title" loading="lazy" />
+      <div class="body">
+        <h2>{{ collection.title }}</h2>
+        <p>{{ collection.blurb }}</p>
+        <span class="link">View collection ?</span>
+      </div>
+    </a>
+  </div>
+</section>

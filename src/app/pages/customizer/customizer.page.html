@@ -1,0 +1,32 @@
+<section class="customizer">
+  <div class="canvas" aria-label="Live engraving preview">
+    <div class="mock">
+      <img src="/img/p-20oz.jpg" alt="Engraving preview" />
+      <div class="overlay" [style.left.px]="x()" [style.top.px]="y()">{{ text() }}</div>
+    </div>
+  </div>
+
+  <form [formGroup]="form" class="panel" aria-label="Customize engraving options">
+    <label>
+      Text
+      <input formControlName="text" placeholder="Enter engraving text" />
+    </label>
+
+    <label>
+      Horizontal position
+      <input type="range" min="0" max="260" formControlName="x" />
+    </label>
+
+    <label>
+      Vertical position
+      <input type="range" min="0" max="320" formControlName="y" />
+    </label>
+
+    <label class="file">
+      Upload artwork
+      <input type="file" accept="image/*,.svg,.pdf" (change)="onFile($event)" />
+    </label>
+
+    <button type="button" class="btn primary">Request Proof</button>
+  </form>
+</section>
